@@ -1,0 +1,28 @@
+[Libraries]
+[Libraries]/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+
+# Visual Studio cache
+.vs/
+*.csproj
+*.sln
+*.user
+*.unityproj
+*.pidb
+*.booproj
+*.svd
+
+# Rider cache
+.idea/
+*.sln.iml
+
+# OS junk
+.DS_Store
+Thumbs.db
