@@ -1,30 +1,16 @@
-\# Interactive Bedroom
-
-
+# Interactive Bedroom
 
 A stylised interactive bedroom showcasing modular asset workflow, custom shaders, and optimised real-time rendering.
 
-
-
 ---
 
-
-
-\## Overview
-
-
+## Overview
 
 This project was created to explore and demonstrate a Unity workflow, including asset creation, optimisation and interactivity. It highlights my experience as a Technical Artist working across Unity, Blender and real-time rendering.
 
-
-
 ---
 
-
-
-\## Features
-
-
+## Features
 
 * Modular environment using Blender
 * Game-ready assets textured in Substance Painter
@@ -34,43 +20,23 @@ This project was created to explore and demonstrate a Unity workflow, including 
 * Mobile/WebGL compatibility
 * Clean folder structure for scalability
 
-
-
 ---
 
-
-
-\## Tech Stack
-
-
+## Tech Stack
 
 * Unity Version: 2022.3.5f1
 * Render Pipeline: URP
 * Tools used: Blender, Substance Painter, Photoshop, Unity
 
-
-
 ---
 
-
-
-\## Project Structure
-
-
+## Project Structure
 
 Assets/
-
-&nbsp; Amazing Assets/ (Render monster for in-game recording/screenshots)
-
-&nbsp; Animations/
-
-&nbsp; Materials/
-
-&nbsp; Models/
-
-&nbsp; Scenes/
-
-&nbsp; Scripts/
-
-&nbsp; textures/
-
+    Amazing Assets/ (Render monster for in-game recording/screenshots)
+    Animations/
+    Materials/
+    Models/
+    Scenes/
+    Scripts/
+    textures/
