@@ -31,7 +31,7 @@ This project was created to explore and demonstrate a Unity workflow, including 
 ---
 
 ## Project Structure
-
+```
 Assets/
     Amazing Assets/ (Render monster for in-game recording/screenshots)
     Animations/
@@ -40,3 +40,4 @@ Assets/
     Scenes/
     Scripts/
     textures/
+```
