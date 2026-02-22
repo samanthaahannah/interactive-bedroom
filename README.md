@@ -22,6 +22,13 @@ This project was created to explore and demonstrate a Unity workflow, including 
 
 ---
 
+## Demo video
+
+See the demo video clip on ArtStation:
+https://www.artstation.com/artwork/YG6gP3
+
+---
+
 ## Tech Stack
 
 * Unity Version: 2022.3.5f1
