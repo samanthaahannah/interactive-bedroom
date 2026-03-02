@@ -34,16 +34,20 @@ public class DrawerAnimScript : MonoBehaviour
         string trig = animTriggers[drawerIndex];
         string closedBool = animBools[drawerIndex];
 
-        if (Trigged)
-        {
-            anim.SetBool(closedBool, false);
-            Closed = !Closed;
-        }
-        else
+        if (!Trigged)
         {
             anim.SetTrigger(trig);
             Closed = false;
             Trigged = true;
         }
+        else
+        {
+            Closed = !Closed;
+            anim.SetBool(closedBool, Closed);
+        }
+    }
+    public void ResetTriggerState()
+    {
+        Trigged = false;
     }
 }
