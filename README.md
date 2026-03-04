@@ -40,7 +40,6 @@ https://www.artstation.com/artwork/YG6gP3
 ## Project Structure
 ```
 Assets/
-    Amazing Assets/ (Render monster for in-game recording/screenshots)
     Animations/
     Materials/
     Models/
