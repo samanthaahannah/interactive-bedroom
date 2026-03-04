@@ -5,45 +5,29 @@ using UnityEngine;
 public class DoorAnimationScript : MonoBehaviour
 {
     Animator anim;
-    bool Trigged;
-    bool Closed;
-
-    // Start is called before the first frame update
+    bool trigged;
+    bool closed;
+ 
     void Start()
     {
         anim = GetComponent<Animator>();
-        Trigged = false;
-        Closed = true;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        trigged = false;
+        closed = true;
 
     }
 
     void OnMouseDown()
     {
-        if (Trigged == true)
+        if (trigged)
         {
-
-            if (Closed == false)
-            {
-                anim.SetBool("DoorClosed", false);
-                Closed = true;
-            }
-            else if (Closed == true)
-            {
-                anim.SetBool("DoorClosed", true);
-                Closed = false;
-            }
+            anim.SetBool("door_closed", closed);
+            closed = !closed;
         }
-        else if (Trigged == false)
+        else
         {
-            anim.SetTrigger("DoorTrig");
-            Closed = false;
-            Trigged = true;
+            anim.SetTrigger("door_trig");
+            closed = false;
+            trigged = true;
         }
     }
 }

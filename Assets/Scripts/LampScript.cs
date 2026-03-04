@@ -4,42 +4,35 @@ using UnityEngine;
 
 public class LampScript : MonoBehaviour
 {
-    public GameObject Light1;
-    public GameObject Light2;
-    Light lightComp1;
-    Light lightComp2;
-    bool LightsOn;
-    // Start is called before the first frame update
+    public GameObject light1;
+    public GameObject light2;
+    Light light_comp1;
+    Light light_comp2;
+    bool lights_on;
+
     void Start()
     {
-        lightComp1 = Light1.GetComponent<Light>();
-        lightComp2 = Light2.GetComponent<Light>();
-        Light1.SetActive(true);
-        Light2.SetActive(true);
-        LightsOn = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        light_comp1 = light1.GetComponent<Light>();
+        light_comp2 = light2.GetComponent<Light>();
+        light1.SetActive(true);
+        light2.SetActive(true);
+        lights_on = true;
     }
 
     void OnMouseDown()
     {
-        if (LightsOn == false )
+        if (lights_on)
         {
-            Light1.SetActive(true);
-            Light2.SetActive(true);
-            LightsOn = true;
+            light1.SetActive(false);
+            light2.SetActive(false);
+            lights_on = !lights_on;
         }
-        else if (LightsOn == true)
+        else 
         {
-            Light1.SetActive(false);
-            Light2.SetActive(false);
-            LightsOn = false;
-
+            light1.SetActive(true);
+            light2.SetActive(true);
+            lights_on = true;
         }
-
+        
     }
 }

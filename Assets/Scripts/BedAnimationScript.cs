@@ -5,29 +5,28 @@ using UnityEngine;
 public class BedAnimationScript : MonoBehaviour
 {
     Animator anim;
-    bool Trigged;
-    bool Covered;
+    bool trigged;
+    bool covered;
 
-    // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        Trigged = false;
-        Covered = true;
+        trigged = false;
+        covered = true;
     }
 
     void OnMouseDown()
     {
-        if (Trigged)
+        if (trigged)
         {
-            anim.SetBool("CoveredUp", Covered);
-            Covered = !Covered;
+            anim.SetBool("covered_up", covered);
+            covered = !covered;
         }
         else
         {
-            anim.SetTrigger("BedTrig");
-            Covered = false;
-            Trigged = true;
+            anim.SetTrigger("bed_trig");
+            covered = false;
+            trigged = true;
         }
 
     }

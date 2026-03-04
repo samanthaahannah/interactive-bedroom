@@ -5,48 +5,48 @@ using UnityEngine.UI;
 
 public class SunScript : MonoBehaviour
 {
-    public GameObject Sun;
-    public Button SunButton;
-    public Button MoonButton;
+    public GameObject sun;
+    public Button sun_button;
+    public Button moon_button;
 
-    private Light SunComp;
-    private bool IsNight = true;
+    private Light sun_comp;
+    private bool is_night = true;
 
     void Start()
     {
-        SunComp = Sun.GetComponent<Light>();
-        SunComp.intensity = 0.1f;
-        SunButton.interactable = true;
-        MoonButton.interactable = false;
+        sun_comp = sun.GetComponent<Light>();
+        sun_comp.intensity = 0.1f;
+        sun_button.interactable = true;
+        moon_button.interactable = false;
         RenderSettings.ambientLight = new Color(0.1707369f, 0.1707369f, 0.4150943f);
     }
 
-    public void DayNight()
+    public void dayNight()
     {
-        IsNight = !IsNight;
-        if (IsNight)
+        is_night = !is_night;
+        if (is_night)
         {
-            SetNight();
+            setNight();
         }
         else
         {
-            SetDay();
+            setDay();
         }
     }
 
-    private void SetDay()
+    private void setDay()
     {
-        SunComp.intensity = 1f;
-        SunButton.interactable = false;
-        MoonButton.interactable = true;
+        sun_comp.intensity = 1f;
+        sun_button.interactable = false;
+        moon_button.interactable = true;
         RenderSettings.ambientLight = new Color(0.5764329f, 0.5764329f, 0.8301887f);
     }
 
-    private void SetNight()
+    private void setNight()
     {
-        SunComp.intensity = 0.1f;
-        SunButton.interactable = true;
-        MoonButton.interactable = false;
+        sun_comp.intensity = 0.1f;
+        sun_button.interactable = true;
+        moon_button.interactable = false;
         RenderSettings.ambientLight = new Color(0.1707369f, 0.1707369f, 0.4150943f);
     }
 }

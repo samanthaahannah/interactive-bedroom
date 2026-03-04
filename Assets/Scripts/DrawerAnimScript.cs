@@ -6,24 +6,23 @@ public class DrawerAnimScript : MonoBehaviour
 {
     Animator anim;
     [Header("Animation names")]
-    public string[] animTriggers = 
+    public string[] anim_triggers = 
     { 
-        "Drawer1Trig", "Drawer2Trig", "Drawer3Trig", 
-        "Drawer4Trig", "Drawer5Trig", "Drawer6Trig" 
+        "drawer1_trig", "drawer2_trig", "drawer3_trig", 
+        "drawer4_trig", "drawer5_trig", "drawer6_trig" 
     };
-    public string[] animBools = 
+    public string[] anim_bools = 
     { 
-        "Drawer1Closed", "Drawer2Closed", "Drawer3Closed", 
-        "Drawer4Closed", "Drawer5Closed", "Drawer6Closed" 
+        "drawer1_closed", "drawer2_closed", "drawer3_closed", 
+        "drawer4_closed", "drawer5_closed", "drawer6_closed" 
     };
 
     [Header("Which drawer? (0-5)")]
-    public int drawerIndex;
+    public int drawer_index;
 
-    bool Trigged = false;
-    bool Closed = true;
+    bool trigged = false;
+    bool closed = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -31,23 +30,19 @@ public class DrawerAnimScript : MonoBehaviour
 
     void OnMouseDown()
     {
-        string trig = animTriggers[drawerIndex];
-        string closedBool = animBools[drawerIndex];
+        string trig = anim_triggers[drawer_index];
+        string closed_bool = anim_bools[drawer_index];
 
-        if (!Trigged)
+        if (trigged)
         {
-            anim.SetTrigger(trig);
-            Closed = false;
-            Trigged = true;
+            anim.SetBool(closed_bool, closed);
+            closed = !closed;
         }
         else
         {
-            Closed = !Closed;
-            anim.SetBool(closedBool, Closed);
+            anim.SetTrigger(trig);
+            closed = false;
+            trigged = true;
         }
-    }
-    public void ResetTriggerState()
-    {
-        Trigged = false;
     }
 }

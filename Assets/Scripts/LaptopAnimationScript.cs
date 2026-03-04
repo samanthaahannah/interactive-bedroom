@@ -5,45 +5,29 @@ using UnityEngine;
 public class LaptopAnimationScript : MonoBehaviour
 {
     Animator anim;
-    bool Trigged;
-    bool Closed;
+    bool trigged;
+    bool closed;
 
-    // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        Trigged = false;
-        Closed = true;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        trigged = false;
+        closed = true;
 
     }
 
     void OnMouseDown()
     {
-        if (Trigged == true)
+        if (trigged == true)
         {
-
-            if (Closed == false)
-            {
-                anim.SetBool("LaptopClosed", false);
-                Closed = true;
-            }
-            else if (Closed == true)
-            {
-                anim.SetBool("LaptopClosed", true);
-                Closed = false;
-            }
+            anim.SetBool("laptop_closed", closed);
+            trigged = !trigged;
         }
-        else if (Trigged == false)
-        {
-            anim.SetTrigger("LaptopTrig");
-            Closed = false;
-            Trigged = true;
+        else 
+        { 
+            anim.SetTrigger("laptop_trig");
+            closed = false;
+            trigged = true;
         }
     }
 }
